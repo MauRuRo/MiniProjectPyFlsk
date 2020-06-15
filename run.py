@@ -32,7 +32,7 @@ def user(username):
         username = session["username"]
         message = request.form["message"]
         add_message(username, message)
-        redirect(url_for("user", username=session["username"]))
+        return redirect(url_for("user", username=session["username"]))
 
     return render_template("chat.html", username = username, chat_messages = messages)
 
